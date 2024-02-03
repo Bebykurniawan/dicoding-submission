@@ -1,0 +1,92 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  --primary-color: #ffffff;
+  --secondary-color: #dc2626;
+  --base-color: #232323;
+}
+
+*,
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}
+
+/* body {
+  border: 1px solid black;
+} */
+
+a {
+  text-decoration: none;
+  color: var(--base-color);
+  font-weight: 400;
+}
+
+header {
+  display: flex;
+  padding: 1.5rem 5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  margin: 1rem;
+}
+
+nav a:nth-child(4) {
+  position: relative;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  padding: 0.5rem 1rem;
+  transition: 0.2s ease-in-out;
+}
+
+nav a:nth-child(4):hover {
+  border-right: 3px solid var(--secondary-color);
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    background-color: rgb(252, 196, 196);
+    overflow: hidden;
+  }
+
+  header {
+    display: flex;
+    padding: 1.5rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav {
+    position: absolute;
+    top: 4.5rem;
+    right: -100%;
+    padding: 1rem 2rem;
+    transition: .2s ease-in-out;
+  }
+  
+  nav a {
+    display: block;
+  }
+
+  nav a:nth-child(4) {
+    text-align: center;
+  }
+
+  .navbar.active{
+    right: 0;
+  }
+  
+  #hamburger-menu {
+    display: flex;
+    color: var(--base-color);
+  }
+}
