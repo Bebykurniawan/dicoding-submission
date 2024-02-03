@@ -1,7 +1,7 @@
 :root {
   font-family: "Montserrat", sans-serif;
   --primary-color: #ffffff;
-  --secondary-color: #dc2626;
+  --secondary-color: rgb(220, 38, 38);
   --base-color: #232323;
 }
 
@@ -11,12 +11,7 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* border: 1px solid black; */
 }
-
-/* body {
-  border: 1px solid black;
-} */
 
 a {
   text-decoration: none;
@@ -29,6 +24,19 @@ header {
   padding: 1.5rem 5rem;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+header.header-scroll-active {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.6px);
+  -webkit-backdrop-filter: blur(12.6px);
+  transition: 0.3s ease-in-out;
 }
 
 nav a {
@@ -36,7 +44,6 @@ nav a {
 }
 
 nav a:nth-child(4) {
-  position: relative;
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);
   padding: 0.5rem 1rem;
@@ -48,13 +55,87 @@ nav a:nth-child(4):hover {
   border-bottom: 3px solid var(--secondary-color);
 }
 
-.hamburger-menu {
+#hamburger-menu {
   display: none;
 }
 
+.hero-section {
+  background-image: radial-gradient(
+      ellipse 50vw 50vh at right bottom,
+      rgba(220, 38, 38, 0.486),
+      rgba(255, 0, 0, 0.25),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 30vw 30vh at left top,
+      rgba(255, 0, 0, 0.5),
+      rgba(255, 0, 0, 0.25),
+      transparent
+    );
+   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 4rem;
+}
+
+.hero-section h1 {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.hero-section p {
+  line-height: 1.5;
+  margin-top: 1rem;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+p {
+  color: var(--base-color);
+}
+
+h1 {
+  color: var(--base-color);
+}
+
+h1 span {
+  color: var(--secondary-color);
+}
+
+.hero-section a {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  padding: 0.5rem 3rem;
+  animation: bounce 3s infinite;
+}
+
+.hero-section a:hover {
+  border-right: 3px solid var(--secondary-color);
+  border-bottom: 3px solid var(--secondary-color);
+  transition: 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 @media screen and (max-width: 900px) {
+  html {
+    font-size: 72.5%;
+  }
+
   body {
-    background-color: rgb(252, 196, 196);
     overflow: hidden;
   }
 
@@ -65,26 +146,35 @@ nav a:nth-child(4):hover {
     justify-content: space-between;
   }
   
-  nav {
-    position: absolute;
-    top: 4.5rem;
-    right: -100%;
-    padding: 1rem 2rem;
-    transition: .2s ease-in-out;
-  }
-  
   nav a {
     display: block;
   }
+
+  nav {
+    position: absolute;
+    width: 100%;
+    top: 5rem;
+    right: 0;
+    padding: 2rem 4rem;
+    transition: 0.3s ease-out;
+    visibility: hidden;
+    transform: scale(0);
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.9px);
+    -webkit-backdrop-filter: blur(8.9px);
+  }
+
+  .navbar.active {
+    transform: scale(1);
+    visibility: visible;
+  }
+
 
   nav a:nth-child(4) {
     text-align: center;
   }
 
-  .navbar.active{
-    right: 0;
-  }
-  
   #hamburger-menu {
     display: flex;
     color: var(--base-color);
