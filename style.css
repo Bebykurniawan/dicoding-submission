@@ -150,15 +150,6 @@ main {
   margin: 3rem 5rem;
 }
 
-.radial-background {
-  background-image: radial-gradient(
-    ellipse 100vw 30vh at center left,
-    rgba(255, 0, 0, 0.1),
-    rgba(255, 0, 0, 0.25),
-    transparent
-  );
-}
-
 main h2 {
   font-weight: 700;
   font-size: 3.5rem;
@@ -198,12 +189,6 @@ main #tentangsaya {
 /* TENTANG SAYA */
 
 /* SKILL */
-/* aside {
-  height: 100vh;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-} */
-
 .skill-section {
   padding-top: 7rem;
 }
