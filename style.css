@@ -208,7 +208,8 @@ main #tentangsaya {
   padding-top: 7rem;
 }
 
-.skill-section p, .skill-section h2 {
+.skill-section p,
+.skill-section h2 {
   text-align: center;
   line-height: 1.5;
   font-size: 1.4rem;
@@ -233,6 +234,7 @@ main #tentangsaya {
 .wrapper-card h4 {
   color: var(--secondary-color);
   font-size: 2rem;
+
   font-weight: 600;
 }
 
@@ -250,7 +252,6 @@ main #tentangsaya {
   text-align: center;
 }
 
-
 /* SKILL */
 
 /* KONTAK */
@@ -258,15 +259,87 @@ main #tentangsaya {
   padding: 5rem;
   height: 100vh;
   /* width: 100%; */
-}
-
-.container-kontak h2{
   text-align: center;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
 
+form .input-group {
+  margin: 0.5rem 1rem;
+}
 
+form .input-group input,form .input-group textarea {
+  max-width: 600px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+form > #btn{
+  display: block;
+  color: var(--secondary-color);
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  max-width: 300px;
+  margin: 1rem auto;
+  transition: 0.3s ease-in-out;
+}
+
+form #btn:hover {
+  border-right: 3px solid var(--secondary-color);
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.container-kontak h2 {
+  margin-bottom: 2rem;
+}
 /* KONTAK */
+
+/* FOOTER */
+footer {
+  display: flex;
+  background-color: #dc2626;
+  justify-content: center;
+}
+
+.wrapper-footer {
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.logo-medsos {
+margin: 1rem;
+}
+
+.logo-medsos a {
+  padding: 1rem;
+  color: var(--primary-color);
+}
+
+.links a {
+  padding: 0.5rem;
+  color: var(--primary-color);
+  transition: .2s ease-in-out;
+}
+
+.links a:hover {
+  opacity: 0.6;
+}
+
+.credit p {
+  color: var(--primary-color);
+  opacity: 0.7;
+  margin: 1.5rem 0;
+
+}
+
+/* FOOTER */
 
 /* Media Queries */
 @media screen and (max-width: 900px) {
