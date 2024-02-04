@@ -15,36 +15,114 @@
   </head>
   <body>
     <!-- Navbar Start -->
-      <header class="header ">
-        <a href="#home">Beby</a>
-        <nav class="navbar">
-          <a href="#beranda">Beranda</a>
-          <a href="#tentangsaya">Tentang Saya</a>
-          <a href="#teknologi">Teknologi</a>
-          <a href="#kontak">Kontak</a>
-        </nav>
-        <a href="#" id="hamburger-menu">
-          <i data-feather="menu"></i>
-        </a>
-      </header>
-      <!-- Navbar End -->
-
-      <section class="hero-section">
-        <h1>A Beginner <span>Frontend Developer</span></h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
-          debitis?
-        </p>
-        <a href="#tentangsaya">
-          <i data-feather="arrow-down"></i>
-        </a>
-      </section>
-
+    <header class="header">
+      <a href="#home">Beby</a>
+      <nav class="navbar">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentangsaya">Tentang Saya</a>
+        <a href="#skill">Skill</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <a href="#" id="hamburger-menu">
+        <i data-feather="menu"></i>
+      </a>
+    </header>
+    <!-- Navbar End -->
 
     <!-- Hero Section Start -->
-
+    <section class="hero-section" id="beranda">
+      <h1>A Beginner <span>Frontend Developer</span></h1>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi,
+        debitis?
+      </p>
+      <a href="#tentangsaya">
+        <i data-feather="arrow-down"></i>
+      </a>
+    </section>
     <!-- Hero Section End -->
-    <main></main>
+
+    <!-- Main Content Start-->
+    <main>
+      <!-- Tentang Saya -->
+      <aside id="tentangsaya">
+        <div class="foto-diri">
+          <img src="assets/foto_diri.jpg" alt="foto_diri" />
+        </div>
+        <div class="deskripsi-tentang-saya">
+          <h2>Tentang <span>Saya</span></h2>
+          <p>
+            Hai! Nama saya Beby Kurniawan, seorang junior programmer yang
+            bersemangat untuk menjelajahi dunia coding dan pengembangan
+            perangkat lunak.
+          </p>
+        </div>
+      </aside>
+      <!-- Tentang Saya -->
+
+      <!-- Skill -->
+      <section id="skill">
+        <section class="skill-section">
+          <h2>Skill</h2>
+          <p>Beberapa skill yang saya kuasai</p>
+          <div class="wrapper-card">
+            <div class="card">
+              <img src="assets/html.svg" alt="" width="100%" />
+              <article class="deskripsi-card">
+                <h4>Html</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, alias.
+                </p>
+              </article>
+            </div>
+            <div class="card">
+              <img src="assets/css3-alt.svg" alt="" width="100%" />
+              <article class="deskripsi-card">
+                <h4>Css</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, alias.
+                </p>
+              </article>
+            </div>
+            <div class="card">
+              <img src="assets/js.svg" alt="" width="100%" />
+              <article class="deskripsi-card">
+                <h4>Javascript</h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, alias.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- Skill -->
+      <section class="container-kontak" id="kontak">
+        <h2>Hubungi <span>Saya</span></h2>
+        <form action="">
+          <div class="input-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" placeholder="Nama..." />
+          </div>
+
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email..." />
+          </div>
+
+          <div class="input-group">
+            <label for="subjek">Subjek</label>
+            <textarea name="subjek" id="subjek" cols="30" rows="10"></textarea>
+          </div>
+
+          <button id="btn">Kirim</button>
+        </form>
+      </section>
+    </main>
+    <!-- Main Content End-->
 
     <script src="main.js"></script>
     <script>

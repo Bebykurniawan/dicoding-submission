@@ -1,7 +1,7 @@
 :root {
   font-family: "Montserrat", sans-serif;
   --primary-color: #ffffff;
-  --secondary-color: rgb(220, 38, 38);
+  --secondary-color: #dc2626;
   --base-color: #232323;
 }
 
@@ -11,7 +11,11 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+/* * {
+  border: 1px solid black;
+} */
 
 a {
   text-decoration: none;
@@ -28,6 +32,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 100;
 }
 
 header.header-scroll-active {
@@ -59,26 +64,40 @@ nav a:nth-child(4):hover {
   display: none;
 }
 
+/* HERO */
 .hero-section {
   background-image: radial-gradient(
       ellipse 50vw 50vh at right bottom,
-      rgba(220, 38, 38, 0.486),
+      rgba(220, 38, 38, 100),
       rgba(255, 0, 0, 0.25),
       transparent
     ),
     radial-gradient(
       ellipse 30vw 30vh at left top,
-      rgba(255, 0, 0, 0.5),
+      rgba(255, 0, 0, 0.1),
       rgba(255, 0, 0, 0.25),
       transparent
     );
-   
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 2rem 4rem;
+}
+
+.hero-section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgb(255, 255, 255) 10%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .hero-section h1 {
@@ -89,7 +108,7 @@ nav a:nth-child(4):hover {
 .hero-section p {
   line-height: 1.5;
   margin-top: 1rem;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 1.5rem;
 }
 
@@ -108,16 +127,11 @@ h1 span {
 .hero-section a {
   margin-top: 1.5rem;
   font-size: 1rem;
-  color: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
   padding: 0.5rem 3rem;
   animation: bounce 3s infinite;
-}
-
-.hero-section a:hover {
-  border-right: 3px solid var(--secondary-color);
-  border-bottom: 3px solid var(--secondary-color);
-  transition: 0.3s ease-in-out;
 }
 
 @keyframes bounce {
@@ -129,23 +143,141 @@ h1 span {
     transform: translateY(-10px);
   }
 }
+/* HERO */
 
+/* TENTANG SAYA */
+main {
+  margin: 3rem 5rem;
+}
+
+.radial-background {
+  background-image: radial-gradient(
+    ellipse 100vw 30vh at center left,
+    rgba(255, 0, 0, 0.1),
+    rgba(255, 0, 0, 0.25),
+    transparent
+  );
+}
+
+main h2 {
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: var(--base-color);
+}
+
+main #tentangsaya h2 {
+  margin-bottom: 1rem;
+}
+
+main #tentangsaya .foto-diri img {
+  width: 100%;
+  box-shadow: 9px 8px 34px -5px rgba(0, 0, 0, 0.59);
+  -webkit-box-shadow: 9px 8px 34px -5px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 9px 8px 34px -5px rgba(0, 0, 0, 0.59);
+}
+
+main h2 span {
+  color: var(--secondary-color);
+}
+
+main #tentangsaya p {
+  max-width: 80%;
+  line-height: 1.5;
+  font-size: 1.4rem;
+  color: var(--base-color);
+  font-weight: 300;
+}
+
+main #tentangsaya {
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 2rem;
+}
+/* TENTANG SAYA */
+
+/* SKILL */
+/* aside {
+  height: 100vh;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+} */
+
+.skill-section {
+  padding-top: 7rem;
+}
+
+.skill-section p, .skill-section h2 {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.4rem;
+  color: var(--base-color);
+  font-weight: 300;
+}
+
+.skill-section h2 {
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: var(--base-color);
+}
+
+.wrapper-card {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.wrapper-card h4 {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.wrapper-card p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+#skill .skill-section .wrapper-card .card {
+  width: 400px;
+  /* background-color: black;
+  border: 1px solid var(--secondary-color); */
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+
+/* SKILL */
+
+/* KONTAK */
+.container-kontak {
+  padding: 5rem;
+  height: 100vh;
+  /* width: 100%; */
+}
+
+.container-kontak h2{
+  text-align: center;
+}
+
+
+
+/* KONTAK */
+
+/* Media Queries */
 @media screen and (max-width: 900px) {
   html {
     font-size: 72.5%;
   }
 
   body {
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
-  header {
-    display: flex;
-    padding: 1.5rem 2rem;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
   nav a {
     display: block;
   }
@@ -170,7 +302,6 @@ h1 span {
     visibility: visible;
   }
 
-
   nav a:nth-child(4) {
     text-align: center;
   }
@@ -179,4 +310,23 @@ h1 span {
     display: flex;
     color: var(--base-color);
   }
+
+  main #tentangsaya p {
+    max-width: 100%;
+  }
+
+  main #tentangsaya {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+/* Media Queries */
